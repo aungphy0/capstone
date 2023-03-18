@@ -1,24 +1,23 @@
 import './App.css';
 import Header from './Header.js';
 import Footer from './Footer.js';
+import Nav from './Nav.js';
+import Main from './Main.js';
 
 function App() {
   return (
     <html>
-      <head></head>
+      <head>
+      </head>
       <body>
         <header>
           <Header/>
           <nav>
-            <ul>
-              <li><a href="/home">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/order">Online Order</a></li>
-            </ul>
+            <Nav/>
           </nav>
         </header>
         <main>
-
+          <Main/>
         </main>
         <footer>
           <Footer/>

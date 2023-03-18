@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(6,100px);
+  justify-content: space-evenly;
+  padding-top: 10px;
+  
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: auto;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+}
+
+.main_logo {
+  display: grid;
+  grid-template-rows: auto;
+  justify-content: center;
+}

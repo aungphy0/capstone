@@ -4,8 +4,8 @@ class Footer extends React.Component {
 
     render(){
         return (
-            <div>
-                Copyright @ 2023
+            <div className='footer'>
+                Project @ 2023
             </div>
         )
     };
