@@ -85,15 +85,33 @@
 }
 
 .reserve_table {
-  background-color: darkolivegreen;
+  background-color: rgb(214, 106, 39);
   color: aliceblue;
 }
 
+.reserve_table:hover {
+  background-color: darkolivegreen;
+  color: aliceblue;
+}
 .g-3{
   display: grid;
   grid-template-columns: 300px 300px 300px;
+  justify-items: center;
   justify-content: space-evenly;
   padding-top: 50px;
   padding-bottom: 50px;
 
+}
+
+@media (max-width: 500px) {
+  .grid-adjustable-columns {
+    display: grid;
+    grid-auto-flow: row;
+  }
+}
+
+.booking-table {
+  width: 500px;
+  length: 800px;
+  border: #282c34 solid 1px;
 }

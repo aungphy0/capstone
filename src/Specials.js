@@ -4,14 +4,13 @@ import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
 
-class Specials extends React.Component {
+const Specials = () => {
 
-    render() {
         return(
             <Row className="g-3">
             <Col>
                 <Card>
-                    <Card.Img variant="top" src="special1.png" width="300px" length="400px" />
+                    <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special1</Card.Title>
                     <Card.Text>
@@ -23,7 +22,7 @@ class Specials extends React.Component {
             </Col>
             <Col>
                 <Card>
-                    <Card.Img variant="top" src="special2.png" width="300px" length="400px" />
+                    <Card.Img variant="top" src="special2.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special2</Card.Title>
                     <Card.Text>
@@ -35,7 +34,7 @@ class Specials extends React.Component {
             </Col>
             <Col>
                 <Card>
-                    <Card.Img variant="top" src="special1.png" width="300px" length="400px" />
+                    <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special3</Card.Title>
                     <Card.Text>
@@ -47,7 +46,6 @@ class Specials extends React.Component {
             </Col>
             </Row>
         );
-    };
-}
+};
 
 export default Specials;
