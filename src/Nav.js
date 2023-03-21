@@ -22,7 +22,8 @@ const Nav = () =>{
                 <a href="/login">Login</a>
               </div>
               <BrowserRouter>
-                <Routes> 
+                <Routes>
+                    <Route path="/" element={<Main />}></Route>
                     <Route path="/home" element={<Main />}></Route>
                     <Route path="/about" element={<AboutLittleLemon />}></Route>
                     <Route path="/menu" element={<MenuLittleLemon />}></Route>
