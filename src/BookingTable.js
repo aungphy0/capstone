@@ -1,10 +1,11 @@
 import React from 'react';
+import BookingForm from './BookingForm';
 
 export default function BookingTable() {
 
-    return (
-        <div className="booking-table">
-            <h1>Booking Table</h1>
+    return(
+        <div>
+            <BookingForm />
         </div>
     );
 }

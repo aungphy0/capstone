@@ -103,10 +103,9 @@
 
 }
 
-@media (max-width: 500px) {
-  .grid-adjustable-columns {
-    display: grid;
-    grid-auto-flow: row;
+@media only screen and (max-width: 500px) {
+  .main_logo, .navbar, .main_card, .main_card_img, .g-3, .footer {
+    display: flex;
   }
 }
 
@@ -114,4 +113,19 @@
   width: 500px;
   length: 800px;
   border: #282c34 solid 1px;
+}
+
+.booking-form {
+  display: grid; 
+  max-width: 300px; 
+  gap: 20px;
+  justify-content: center;
+  border: #282c34 solid 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  background-color: #11553a;
+  border-radius: 7%;
+  color: #e7eb0cee;
+  
 }
