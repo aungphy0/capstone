@@ -9,7 +9,7 @@ const Specials = () => {
         return(
             <Row className="g-3">
             <Col>
-                <Card>
+                <Card className="card-1">
                     <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special1</Card.Title>
@@ -21,7 +21,7 @@ const Specials = () => {
                 </Card>
             </Col>
             <Col>
-                <Card>
+                <Card className="card-2">
                     <Card.Img variant="top" src="special2.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special2</Card.Title>
@@ -33,7 +33,7 @@ const Specials = () => {
                 </Card>
             </Col>
             <Col>
-                <Card>
+                <Card className="card-3">
                     <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
                     <Card.Body>
                     <Card.Title>Special3</Card.Title>
