@@ -138,5 +138,12 @@
   background-color: #11553a;
   border-radius: 7%;
   color: #e7eb0cee;
+}
 
+.about-page{
+  text-align: center;
+}
+
+.reservation-page{
+  text-align: center;
 }
