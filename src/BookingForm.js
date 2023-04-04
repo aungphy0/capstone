@@ -1,6 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
 import React from "react";
-import {fetchAPI, submitAPI} from "./AvaTimeAPI";
+import {fetchAPI} from "./AvaTimeAPI";
 
 
 const updateTimes = (state, action) => {
@@ -31,11 +31,9 @@ const BookingForm = () => {
 
     const [availableTimes, setAvailableTimes] = useState([""]);
 
-    const times = fetchAPI(new Date(date));
-
-    // console.log(times)
+    // get available times by different dates
     useEffect( () => {
-        setAvailableTimes(times)
+        setAvailableTimes(fetchAPI(new Date(date)))
     },[date])
 
     const [totalGuest, setTotalGuest] = useState(1);
