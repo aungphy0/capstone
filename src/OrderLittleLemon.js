@@ -1,79 +1,51 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/Row';
 
-/*
-const data = [
-    {
-        id: "1",
-        title: "Tiramisu",
-        description: "The best tiramisu in town",
-        image: "https://picsum.photos/200/300/?random",
-        price: "$5.00",
-    },
-    {
-        id: "2",
-        title: "Lemon Ice Cream",
-        description: "Mind blowing taste",
-        image: "https://picsum.photos/200/300/?random",
-        price: "$4.50",
-    },
-    {
-        id: "3",
-        title: "Chocolate mousse",
-        description: "Unexplored flavour",
-        image: "https://picsum.photos/200/300/?random",
-        price: "$6.00",
-    },
-]
+const OrderLittleLemon = () => {
 
-const topMenuItems = data.map( item => {
-    return{
-        content: `${item.title} - ${item.description}`,
-        price: item.price,
-    }
-})
-*/
-
-const ToDo = (props) => (
-    <tr>
-        <td>
-            <label>{props.id}</label>
-        </td>
-        <td>
-            <input />
-        </td>
-        <td>
-            <label>{props.createdAt}</label>
-        </td>
-    </tr>
-);
-export default function OrderLittleLemon(){
-    // console.log(topMenuItems)
-    const [todos, setTodos] = useState([
-        {
-            id: 'todo1',
-            createdAt: '18:00',
-        },
-        {
-            id: 'todo2',
-            createdAt: '20:30',
-        }
-    ]);
-
-    const reverseOrder = () => {
-        setTodos([...todos].reverse());
-    }
-
-    return (
-        // <h1>OrderLittleLemon</h1>
-        <div>
-            <button onClick={reverseOrder}>Reverse</button>
-            <table>
-                <tbody>
-                    {todos.map((todo, index) => (
-                        <ToDo key={index} id={todo.id} createdAt={todo.createdAt} />
-                    ))}
-                </tbody>
-            </table>
-        </div>
+    return(
+        <Row className="g-3">
+        <Col>
+            <Card className="card-1">
+                <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
+                <Card.Body>
+                <Card.Title>Special1</Card.Title>
+                <Card.Text>
+                    Special dish number one!
+                </Card.Text>
+                </Card.Body>
+                <Button variant="Primary" size="lg">Order</Button>
+            </Card>
+        </Col>
+        <Col>
+            <Card className="card-2">
+                <Card.Img variant="top" src="special2.png" width="250px" length="400px" />
+                <Card.Body>
+                <Card.Title>Special2</Card.Title>
+                <Card.Text>
+                    Special dish number two!
+                </Card.Text>
+                </Card.Body>
+                <Button variant="Primary" size="lg">Order</Button>
+            </Card>
+        </Col>
+        <Col>
+            <Card className="card-3">
+                <Card.Img variant="top" src="special1.png" width="250px" length="400px" />
+                <Card.Body>
+                <Card.Title>Special3</Card.Title>
+                <Card.Text>
+                    Special dish number three!
+                </Card.Text>
+                </Card.Body>
+                <Button variant="Primary" size="lg">Order</Button>
+            </Card>
+        </Col>
+        </Row>
     );
-}
+};
+
+export default OrderLittleLemon;
