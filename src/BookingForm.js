@@ -1,6 +1,8 @@
 import { useState, useReducer, useEffect } from "react";
 import React from "react";
-import {fetchAPI} from "./AvaTimeAPI";
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+import {fetchAPI, submitAPI} from "./AvaTimeAPI";
 
 
 const updateTimes = (state, action) => {
@@ -31,6 +33,8 @@ const BookingForm = () => {
 
     const [availableTimes, setAvailableTimes] = useState([""]);
 
+    const [time, setTime] = useState("");
+
     // get available times by different dates
     useEffect( () => {
         setAvailableTimes(fetchAPI(new Date(date)))
@@ -48,9 +52,13 @@ const BookingForm = () => {
         setDate(e1.target.value)
     }
 
-    function handleAvailableTimes(){
-        setAvailableTimes(availableTimes)
+    function handleTime(e2){
+        setTime(e2.target.value)
     }
+
+    // function handleAvailableTimes(){
+    //     setAvailableTimes(availableTimes)
+    // }
 
     function handleGuest(e3){
         setTotalGuest(e3.target.value)
@@ -68,10 +76,22 @@ const BookingForm = () => {
     function handleOccasion(e4){
         setOccasion(e4.target.value)
     }
-    
+
+    const formData = {
+        theDate : date,
+        theTime : time,
+        theGuest : totalGuest,
+        theOccasion : occasion,
+    }
+
+    function submitForm(formData) {
+        return submitAPI(formData);
+    }
+
+
     console.log(new Date(date));
     console.log("date : " + date);
-    console.log("time : " + availableTimes);
+    console.log("time : " + time);
     console.log("guests : " + totalGuest);
     console.log("occasion : " + occasion);
 
@@ -81,7 +101,7 @@ const BookingForm = () => {
             <label for="res-date">Choose date</label>
             <input type="date" id="res-date" onChange={handleDate}/>
             <label for="res-time">Choose time</label>
-            <select id="res-time ">
+            <select id="res-time " onChange={handleTime}>
                 {availableTimes.map( time => {
                     return <option onChange={() => dispatch({type: time})}>{time}</option> })
 
@@ -94,7 +114,12 @@ const BookingForm = () => {
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            <input onclick={handleAvailableTimes} type="submit" value="Make Your reservation"/>
+            {/* <input onclick={handleAvailableTimes} type="submit" value="Make Your reservation"/> */}
+            <Link to={'/confirmedBooking'}>
+                <Button className="reservation"
+                    onClick={submitForm(formData)}
+                >Make Your Reservation</Button>
+            </Link>
         </form>
     );
 };

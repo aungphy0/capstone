@@ -8,6 +8,7 @@ import OrderLittleLemon from './OrderLittleLemon';
 import LoginLittleLemon from './LoginLittleLemon';
 import Main from './Main';
 import BookingTable from './BookingTable';
+import ConfirmedBooking from './ConfirmedBooking';
 
 const Nav = () =>{
 
@@ -31,6 +32,7 @@ const Nav = () =>{
                     <Route path="/order" element={<OrderLittleLemon />}></Route>
                     <Route path="/login" element={<LoginLittleLemon />}></Route>
                     <Route path="/bookingtable" element={<BookingTable />}></Route>
+                    <Route path="/confirmedBooking" element={<ConfirmedBooking />}></Route>
                 </Routes>
               </BrowserRouter>
 
