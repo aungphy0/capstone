@@ -88,6 +88,11 @@ const BookingForm = () => {
         return submitAPI(formData);
     }
 
+    const formValid = () => {
+        return (
+            date && time && totalGuest !== '0' && occasion !== ""
+        );
+    };
 
     console.log(new Date(date));
     console.log("date : " + date);
@@ -99,7 +104,7 @@ const BookingForm = () => {
         <form className="booking-form">
             {/* <h4>{formValue.availableTimes}</h4> */}
             <label for="res-date">Choose date</label>
-            <input type="date" id="res-date" onChange={handleDate}/>
+            <input type="date" id="res-date" required onChange={handleDate}/>
             <label for="res-time">Choose time</label>
             <select id="res-time " onChange={handleTime}>
                 {availableTimes.map( time => {
@@ -117,7 +122,7 @@ const BookingForm = () => {
             {/* <input onclick={handleAvailableTimes} type="submit" value="Make Your reservation"/> */}
             <Link to={'/confirmedBooking'}>
                 <Button className="reservation"
-                    onClick={submitForm(formData)}
+                    onClick={submitForm(formData)} disabled={!formValid()}
                 >Make Your Reservation</Button>
             </Link>
         </form>
